@@ -1,13 +1,16 @@
-const elBegin = document.getElementById("beginningscreen");
-const elGame = document.getElementById("gameonscreen");
+const elBegin = document.getElementById("beginning");
+const elGameOn = document.getElementById("gameon");
+const elSuccess = document.getElementById("gamesuccess");
+const elGameOver = document.getElementById("gameover");
+
 const socket = io();
 
 socket.on("buttonA", (pressed, data) => {
   elBegin.style.display = "none";
-  elGame.style.display = "inline";
+  elGameOn.style.display = "inline";
 });
 
 socket.on("buttonB", (pressed, data) => {
-  elBegin.style.display = "inline";
-  elGame.style.display = "none";  
+  elGameOn.style.display = "none";
+  elSuccess.style.display = "inline";
 });

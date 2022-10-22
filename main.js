@@ -44,7 +44,7 @@ buttonA.watch((err, value) => {
   io.emit("buttonA", value);
 });
 
-buttonB.watch((err,value) => {
+buttonB.watch((err, value) => {
   if (err) {
     console.error("There was an error ", err);
     return;
