@@ -16,7 +16,7 @@ const httpFileServe = (request, response, filename) => {
   }
   console.log("serve file " + filename);
 
-  fs.readFile(__dirname + "html" + filename, function (err, data) {
+  fs.readFile(__dirname + "/html" + filename, function (err, data) {
     if (err) {
       return httpResponse404(response);
     }
