@@ -1,6 +1,7 @@
 const fs = require("fs");
 const Gpio = require("onoff").Gpio;
 const buttonA = new Gpio(17, "in", "both");
+const buttonB = new Gpio(27, "in", "both");
 
 const httpHandler = (request, response) => {
   if (request.method === "GET") {
@@ -41,4 +42,12 @@ buttonA.watch((err, value) => {
     return;
   }
   io.emit("buttonA", value);
+});
+
+buttonB.watch((err,value) => {
+  if (err) {
+    console.error("There was an error ", err);
+    return;
+  }
+  io.emit("buttonB", value);
 });
