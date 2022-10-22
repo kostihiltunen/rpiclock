@@ -7,6 +7,7 @@ const socket = io();
 
 socket.on("buttonA", (pressed, data) => {
   elBegin.style.display = "none";
+  elSuccess.style.display = "none";
   elGameOn.style.display = "inline";
 });
 
