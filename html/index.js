@@ -5,6 +5,8 @@ const elGameOver = document.getElementById("gameover");
 
 let t;
 let solveTime;
+let buttonAPressed = false;
+let buttonBPressed = false;
 
 const socket = io();
 
@@ -13,14 +15,14 @@ socket.on("buttonA", (pressed, data) => {
   elSuccess.style.display = "none";
   elGameOn.style.display = "inline";
 
-  const endTime = new Date().getTime() + 1000 * 60 * 60;
+  const endTime = new Date().getTime() + 1000 * 60 * 60.02;
 
   const timer = () => {
     let now = new Date().getTime();
     t = endTime - now;
 
     if (t >= 0) {
-      let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60.02));
       let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
       let secs = Math.floor((t % (1000 * 60)) / 1000);
 
@@ -38,12 +40,16 @@ socket.on("buttonA", (pressed, data) => {
     }
   };
 
-  setInterval(timer, 1000);
+  const theTimer = setInterval(timer, 1000);
 });
 
 socket.on("buttonB", (pressed, data) => {
-  elGameOn.style.display = "none";
-  elSuccess.style.display = "inline";
-  solveTime = t;
-  console.log(solveTime); //for testing purpose
+  if (buttonBPressed === false) {
+    elGameOn.style.display = "none";
+    elSuccess.style.display = "inline";
+    solveTime = t;
+    console.log(solveTime); //for testing purpose
+    clearInterval(theTimer);
+    buttonBPressed = true;
+  }
 });
