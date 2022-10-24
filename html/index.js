@@ -56,3 +56,10 @@ socket.on("buttonB", (pressed, data) => {
     buttonBPressed = true;
   }
 });
+
+socket.on("buttonC", (pressed, data) => {
+  elBegin.style.display = "inline";
+  elGameOn.style.display = "none";
+  elSuccess.style.display = "none";
+  elGameOver.style.display = "none";
+});
