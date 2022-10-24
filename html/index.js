@@ -7,6 +7,7 @@ let t;
 let solveTime;
 let buttonAPressed = false;
 let buttonBPressed = false;
+let theTimer;
 
 const socket = io();
 
@@ -40,7 +41,7 @@ socket.on("buttonA", (pressed, data) => {
     }
   };
 
-  const theTimer = setInterval(timer, 1000);
+  theTimer = setInterval(timer, 1000);
 });
 
 socket.on("buttonB", (pressed, data) => {
