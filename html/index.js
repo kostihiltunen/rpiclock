@@ -3,25 +3,29 @@ const elGameOn = document.getElementById("gameon");
 const elSuccess = document.getElementById("gamesuccess");
 const elGameOver = document.getElementById("gameover");
 
+let t;
+let solveTime;
+
 const socket = io();
 
 socket.on("buttonA", (pressed, data) => {
   elBegin.style.display = "none";
   elSuccess.style.display = "none";
   elGameOn.style.display = "inline";
+  setInterval(timer, 1000);
 });
 
 socket.on("buttonB", (pressed, data) => {
   elGameOn.style.display = "none";
   elSuccess.style.display = "inline";
-  timer();
+  solveTime = t;
 });
 
 const endTime = new Date().getTime() + 1000 * 60 * 60;
 
-const timer = setInterval(function () {
+const timer = () => {
   let now = new Date().getTime();
-  let t = endTime - now;
+  t = endTime - now;
 
   if (t >= 0) {
     let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -37,5 +41,7 @@ const timer = setInterval(function () {
     document.getElementById("timer-secs").innerHTML =
       ("0" + secs).slice(-2) + "<span class='label'>SEC(S)</span>";
   } else {
+    elGameOn.style.display = "none";
+    elGameOver.style.display = "inline";
   }
-}, 1000);
+};
