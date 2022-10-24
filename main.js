@@ -58,5 +58,5 @@ buttonC.watch((err, value) => {
     console.error("There was an error ", err);
     return;
   }
-  io.emit("buttonB", value);
+  io.emit("buttonC", value);
 });
