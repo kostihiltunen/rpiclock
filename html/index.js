@@ -12,6 +12,7 @@ let theTimer;
 const socket = io();
 
 socket.on("buttonA", (pressed, data) => {
+  buttonBPressed = false;
   clearInterval(theTimer);
   elBegin.style.display = "none";
   elSuccess.style.display = "none";
