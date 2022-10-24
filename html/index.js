@@ -12,6 +12,7 @@ let theTimer;
 const socket = io();
 
 socket.on("buttonA", (pressed, data) => {
+  clearInterval(theTimer);
   elBegin.style.display = "none";
   elSuccess.style.display = "none";
   elGameOn.style.display = "inline";
