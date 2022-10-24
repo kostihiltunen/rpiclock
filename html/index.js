@@ -62,4 +62,6 @@ socket.on("buttonC", (pressed, data) => {
   elGameOn.style.display = "none";
   elSuccess.style.display = "none";
   elGameOver.style.display = "none";
+  buttonAPressed = false;
+  buttonBPressed = false;
 });
