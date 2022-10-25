@@ -48,16 +48,17 @@ socket.on("buttonA", (pressed, data) => {
 
 socket.on("buttonB", (pressed, data) => {
   if (buttonBPressed === false) {
+    buttonBPressed = true;
     elGameOn.style.display = "none";
     elSuccess.style.display = "inline";
     solveTime = t;
     console.log(solveTime); //for testing purpose
     clearInterval(theTimer);
-    buttonBPressed = true;
   }
 });
 
 socket.on("buttonC", (pressed, data) => {
+  clearInterval(theTimer);
   elBegin.style.display = "inline";
   elGameOn.style.display = "none";
   elSuccess.style.display = "none";
