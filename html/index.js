@@ -6,7 +6,7 @@ const elGameOver = document.getElementById("gameover");
 let t;
 let solveTime;
 let buttonAPressed = false;
-let buttonBPressed = false;
+let buttonBPressed = true; // so that button B can only be pressed when button A is pressed first
 let theTimer;
 
 const socket = io();
@@ -66,5 +66,5 @@ socket.on("buttonC", (pressed, data) => {
   elSuccess.style.display = "none";
   elGameOver.style.display = "none";
   buttonAPressed = false;
-  buttonBPressed = false;
+  buttonBPressed = true;
 });
