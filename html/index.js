@@ -15,8 +15,9 @@ socket.on("buttonA", (pressed, data) => {
   buttonBPressed = false;
   clearInterval(theTimer);
   elBegin.style.display = "none";
-  elSuccess.style.display = "none";
   elGameOn.style.display = "inline";
+  elSuccess.style.display = "none";
+  elGameOver.style.display = "none";
 
   const endTime = new Date().getTime() + 1000 * 60 * 60.02;
 
@@ -40,6 +41,7 @@ socket.on("buttonA", (pressed, data) => {
     } else {
       elGameOn.style.display = "none";
       elGameOver.style.display = "inline";
+      buttonBPressed = true; // so that you can't push solving button after time is up
     }
   };
 
