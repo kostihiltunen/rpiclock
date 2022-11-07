@@ -5,11 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="gamescreen">
       <div id="beginning">
-        <p>Systems in working order</p>
+        <div class="flex-container">
+          <div class="info-textbox-padding">
+            <div class="info-textbox">
+              <div id="info-text">Järjestelmä toiminnassa</div>
+              <div id="info-text">System in working order</div>
+            </div>
+          </div> 
+          <div class="info-timerbox-padding">
+            <div class="info-timerbox">
+              <div id="empty-hours">88</div>
+              <div id="empty-mins">88</div>
+             <div id="empty-secs">88</div>
+            </div>
+          </div>  
+          <div class="camerabox">
+            <div id="cctv1"></div>
+            <div id="cctv2"></div>
+          </div>
+        </div>
       </div>
       <div id="gameon" style="display: none">
         <div class="container">
