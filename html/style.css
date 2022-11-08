@@ -50,10 +50,6 @@ body {
   text-shadow: 0 0 1px #000000;
 }
 
-/* .info-timerbox-padding {
-  padding: 10px;
-} */
-
 .info-timerbox {
   display: flex;
   height: 35vh;
