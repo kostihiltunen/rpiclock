@@ -1,12 +1,12 @@
 body {
-    background-color: #807D7F;
-  }
-  
-  .flex-container {
-    display: flex;
-    background-color: #807D7F;
-    flex-direction: column;
-    /*
+  background-color: #807d7f;
+}
+
+.flex-container {
+  display: flex;
+  background-color: #807d7f;
+  flex-direction: column;
+  /*
     border: 2px solid #000000
     justify-content: space-between;
     justify-content: space-around;
@@ -16,81 +16,84 @@ body {
     flex-basis: 100%;
     padding: 0px 0px 0px 0px;
     */
-  }
-  /*
+}
+/*
   .flex-container div {
     justify-content: space-around;
   }
-  */
   
   .info-textbox-padding {
     padding: 10px;
   }
-  .info-textbox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0px 30px 0px;
-    height: 15vh;
-    width: 100%;
-    /*
+*/
+.info-textbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 20vh;
+  width: 95%;
+  margin: 10px 30px 10px 30px;
+  /*
     border-spacing: 10px;
     */
-    background-color: #4E594C;
-    border: 2px solid #000000;
-  }
-  
-  #info-text {
-    font-family: "Arial";
-    color: #2abb00;
-    font-size: 6vh;
-    padding: 5px;
-    text-shadow: 0 0 1px #000000;
-  }
-  
-  .info-timerbox-padding {
-    padding: 10px;
-  }
-  
-  .info-timerbox {
-    display: flex;
-    height: 30vh;
-    width: 91.3%;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-around;
-    /*
+  background-color: #4e594c;
+  border: 2px solid #000000;
+}
+
+#info-text {
+  font-family: "Arial";
+  color: #2abb00;
+  font-size: 6vh;
+  padding: 5px;
+  text-shadow: 0 0 1px #000000;
+}
+
+/* .info-timerbox-padding {
+  padding: 10px;
+} */
+
+.info-timerbox {
+  display: flex;
+  height: 35vh;
+  width: 88%;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  margin: 20px 0px 20px 28px;
+  /*
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
     */
-    background-color: #373737;
-    border: 3px solid #000000;
-    padding: 0px 4vw 0px 4vw;
-  }
-  
-  .info-timerbox div {
-    color: #494949;
-    font-size: 25vh;
-    text-shadow: 0 0 1px #000000;
-    font-family: "Digital Numbers";
-    /*
+  background-color: #373737;
+  border: 3px solid #000000;
+  padding: 0px 4vw 0px 4vw;
+}
+
+.info-timerbox div {
+  color: #494949;
+  font-size: 25vh;
+  text-shadow: 0 0 1px #000000;
+  font-family: "Digital Numbers";
+  margin: 0px;
+  /*
     padding: 0 0 0 0;
     */
-  }
-  
-  .camerabox {
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
-    padding: 8px;
-  }
-  
-  .camerabox div {
-    display: flex;
-    border: 3px solid #000000;
-    height: 17vw;
-    width: 30%; 
-  }  
+}
+
+.camerabox {
+  display: flex;
+  justify-content: space-around;
+  height: 90%;
+  width: 99%;
+  padding: 8px;
+}
+
+.camerabox div {
+  display: flex;
+  border: 3px solid #000000;
+  height: 33vh;
+  width: 30%;
+}
