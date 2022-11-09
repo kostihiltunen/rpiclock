@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Digital Numbers";
+  src: url("../fonts/DigitalNumbers-Regular.ttf");
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url("../fonts/VT323-Regular.ttf");
+}
+
 body {
   background-color: #807d7f;
 }
@@ -35,9 +45,9 @@ body {
 }
 
 #info-text {
-  font-family: "Arial";
+  font-family: "VT323";
   color: #2abb00;
-  font-size: 6vh;
+  font-size: 4em;
   padding: 5px;
   text-shadow: 0 0 1px #000000;
 }
