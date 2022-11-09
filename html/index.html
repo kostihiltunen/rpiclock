@@ -7,29 +7,25 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-    @font-face {
-      font-family: "Digital Numbers";
-      src: url("../fonts/DigitalNumbers-Regular.ttf");
-    }
+      @font-face {
+        font-family: "Digital Numbers";
+        src: url("../fonts/DigitalNumbers-Regular.ttf");
+      }
     </style>
   </head>
   <body>
     <div id="gamescreen">
       <div id="beginning">
         <div class="flex-container">
-          <!-- <div class="info-textbox-padding"> -->
-            <div class="info-textbox">
-              <div id="info-text">Järjestelmä toiminnassa</div>
-              <div id="info-text">System in working order</div>
-            </div>
-          <!-- </div>  -->
-          <!-- <div class="info-timerbox-padding"> -->
-            <div class="info-timerbox">
-              <div id="empty-hours">88</div>
-              <div id="empty-mins">88</div>
-             <div id="empty-secs">88</div>
-            </div>
-          <!-- </div>   -->
+          <div class="info-textbox">
+            <div id="info-text">Järjestelmä toiminnassa</div>
+            <div id="info-text">System in working order</div>
+          </div>
+          <div class="info-timerbox">
+            <div id="empty-hours">88</div>
+            <div id="empty-mins">88</div>
+            <div id="empty-secs">88</div>
+          </div>
           <div class="camerabox">
             <div id="cctv1"></div>
             <div id="cctv2"></div>
@@ -38,11 +34,11 @@
       </div>
       <div id="gameon" style="display: none">
         <div class="container">
-          <p id="timer">
+          <div id="timer">
             <div id="timer-hours"></div>
             <div id="timer-mins"></div>
             <div id="timer-secs"></div>
-          </p>
+          </div>
         </div>
       </div>
       <div id="gamesuccess" style="display: none">
