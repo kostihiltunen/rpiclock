@@ -17,15 +17,7 @@ body {
     padding: 0px 0px 0px 0px;
     */
 }
-/*
-  .flex-container div {
-    justify-content: space-around;
-  }
-  
-  .info-textbox-padding {
-    padding: 10px;
-  }
-*/
+
 .info-textbox {
   display: flex;
   flex-direction: column;
@@ -49,10 +41,6 @@ body {
   padding: 5px;
   text-shadow: 0 0 1px #000000;
 }
-
-/* .info-timerbox-padding {
-  padding: 10px;
-} */
 
 .info-timerbox {
   display: flex;
