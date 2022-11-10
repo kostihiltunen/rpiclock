@@ -16,16 +16,6 @@ body {
   display: flex;
   background-color: #807d7f;
   flex-direction: column;
-  /*
-    border: 2px solid #000000
-    justify-content: space-between;
-    justify-content: space-around;
-    border-spacing: 3px; 
-    align-items: space-between;
-    height: 100%;
-    flex-basis: 100%;
-    padding: 0px 0px 0px 0px;
-    */
 }
 
 .info-textbox {
@@ -37,9 +27,6 @@ body {
   height: 20vh;
   width: 95%;
   margin: 10px 30px 10px 30px;
-  /*
-    border-spacing: 10px;
-    */
   background-color: #4e594c;
   border: 2px solid #000000;
 }
@@ -47,7 +34,7 @@ body {
 #info-text {
   font-family: "VT323";
   color: #2abb00;
-  font-size: 4em;
+  font-size: 4vw;
   padding: 5px;
   text-shadow: 0 0 1px #000000;
 }
@@ -60,11 +47,6 @@ body {
   justify-content: center;
   justify-content: space-around;
   margin: 20px 0px 20px 28px;
-  /*
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-    */
   background-color: #373737;
   border: 3px solid #000000;
   padding: 0px 4vw 0px 4vw;
@@ -76,9 +58,6 @@ body {
   text-shadow: 0 0 1px #000000;
   font-family: "Digital Numbers";
   margin: 0px;
-  /*
-    padding: 0 0 0 0;
-    */
 }
 
 .camerabox {
