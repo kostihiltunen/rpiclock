@@ -57,9 +57,7 @@ socket.on("buttonA", (pressed, data) => {
       document.getElementById("timer-hours").innerHTML = ("0" + hours).slice(
         -2
       );
-
       document.getElementById("timer-mins").innerHTML = ("0" + mins).slice(-2);
-
       document.getElementById("timer-secs").innerHTML = ("0" + secs).slice(-2);
     } else {
       // elGameOn.style.display = "none";
@@ -102,7 +100,7 @@ const gameOnTimer = () => {
   elTimerHours.style.color = "#35FA00";
   elTimerMins.style.color = "#35FA00";
   elTimerSecs.style.color = "#35FA00";
-  elTimerHours.style.textShadow = "0 0 2px #000000";
-  elTimerMins.style.textShadow = "0 0 2px #000000";
-  elTimerSecs.style.textShadow = "0 0 2px #000000";
+  elTimerHours.style.textShadow = "0 0 8px #000000";
+  elTimerMins.style.textShadow = "0 0 8px #000000";
+  elTimerSecs.style.textShadow = "0 0 8px #000000";
 };
