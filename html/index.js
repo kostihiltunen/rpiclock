@@ -99,4 +99,7 @@ const gameOnTimer = () => {
   elTimerHours.style.display = "inline";
   elTimerMins.style.display = "inline";
   elTimerSecs.style.display = "inline";
+  elTimerHours.style.color = "#35FA00";
+  elTimerMins.style.color = "#35FA00";
+  elTimerSecs.style.color = "#35FA00";
 };
