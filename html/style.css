@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Digital Numbers";
-  src: url("../fonts/DigitalNumbers-Regular.ttf");
+  src: url("/fonts/DigitalNumbers-Regular.ttf");
 }
 
 @font-face {
   font-family: "VT323";
-  src: url("../fonts/VT323-Regular.ttf");
+  src: url("/fonts/VT323-Regular.ttf");
 }
 
 body {

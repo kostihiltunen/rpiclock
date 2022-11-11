@@ -39,6 +39,7 @@ socket.on("buttonA", (pressed, data) => {
       document.getElementById("timer-secs").innerHTML =
         ("0" + secs).slice(-2) + "<span class='label'>SEC(S)</span>";
     } else {
+      
       elGameOn.style.display = "none";
       elGameOver.style.display = "inline";
       buttonBPressed = true; // so that you can't push solving button after time is up
