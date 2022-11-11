@@ -102,4 +102,7 @@ const gameOnTimer = () => {
   elTimerHours.style.color = "#35FA00";
   elTimerMins.style.color = "#35FA00";
   elTimerSecs.style.color = "#35FA00";
+  elTimerHours.style.textShadow = "0 0 2px #000000";
+  elTimerMins.style.textShadow = "0 0 2px #000000";
+  elTimerSecs.style.textShadow = "0 0 2px #000000";
 };
