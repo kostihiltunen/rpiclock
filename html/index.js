@@ -54,14 +54,13 @@ socket.on("buttonA", (pressed, data) => {
       let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
       let secs = Math.floor((t % (1000 * 60)) / 1000);
 
-      document.getElementById("timer-hours").innerHTML =
-        ("0" + hours).slice(-2) + "<span class='label'>HR(S)</span>";
+      document.getElementById("timer-hours").innerHTML = ("0" + hours).slice(
+        -2
+      );
 
-      document.getElementById("timer-mins").innerHTML =
-        ("0" + mins).slice(-2) + "<span class='label'>MIN(S)</span>";
+      document.getElementById("timer-mins").innerHTML = ("0" + mins).slice(-2);
 
-      document.getElementById("timer-secs").innerHTML =
-        ("0" + secs).slice(-2) + "<span class='label'>SEC(S)</span>";
+      document.getElementById("timer-secs").innerHTML = ("0" + secs).slice(-2);
     } else {
       // elGameOn.style.display = "none";
       // elGameOver.style.display = "inline";
