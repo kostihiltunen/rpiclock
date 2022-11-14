@@ -12,8 +12,21 @@ const elEmptyMins = document.getElementById("empty-mins");
 const elEmptySecs = document.getElementById("empty-secs");
 
 // text elements that change depending on the state of the game
-const elInfotext = document.getElementById("info-text");
-const elInfotext2 = document.getElementById("info-text2");
+const elInfotextFi = document.getElementById("info-text-fi");
+const elInfotextEn = document.getElementById("info-text-en");
+const elInfoWarningFi = document.getElementById("info-warning-fi");
+const elInfoWarningEn = document.getElementById("info-warning-en");
+const elInfoSuccessFi = document.getElementById("info-success-fi");
+const elInfoSuccessEn = document.getElementById("info-success-en");
+const elInfoGameoverFi = document.getElementById("info-gameover-fi");
+const elInfoGameoverEn = document.getElementById("info-gameover-en");
+
+elInfoWarningFi.style.display = "none";
+elInfoWarningEn.style.display = "none";
+elInfoSuccessFi.style.display = "none";
+elInfoSuccessEn.style.display = "none";
+elInfoGameoverFi.style.display = "none";
+elInfoGameoverEn.style.display = "none";
 
 elTimerHours.style.display = "none";
 elTimerMins.style.display = "none";
@@ -37,7 +50,7 @@ socket.on("buttonA", (pressed, data) => {
   clearInterval(theTimer);
   if (gameStarted === false) {
     gameStarted = true;
-    gameOnTimer();
+    gameOn();
     // elBegin.style.display = "none";
     // elGameOn.style.display = "inline";
     // elSuccess.style.display = "none";
@@ -72,8 +85,9 @@ socket.on("buttonA", (pressed, data) => {
 socket.on("buttonB", (pressed, data) => {
   if (buttonBPressed === false) {
     buttonBPressed = true;
-    elGameOn.style.display = "none";
-    elSuccess.style.display = "inline";
+    gameSuccess();
+    // elGameOn.style.display = "none";
+    // elSuccess.style.display = "inline";
     solveTime = t;
     console.log(solveTime); //for testing purpose
     clearInterval(theTimer);
@@ -90,7 +104,11 @@ socket.on("buttonC", (pressed, data) => {
   buttonBPressed = true;
 });
 
-const gameOnTimer = () => {
+const gameOn = () => {
+  elInfotextFi.style.display = "none";
+  elInfotextEn.style.display = "none";
+  elInfoWarningFi.style.display = "inline";
+  elInfoWarningEn.style.display = "inline";
   elEmptyHours.style.display = "none";
   elEmptyMins.style.display = "none";
   elEmptySecs.style.display = "none";
@@ -103,4 +121,18 @@ const gameOnTimer = () => {
   elTimerHours.style.textShadow = "0 0 3px #000000";
   elTimerMins.style.textShadow = "0 0 3px #000000";
   elTimerSecs.style.textShadow = "0 0 3px #000000";
+};
+
+const gameSuccess = () => {
+  elInfoWarningFi.style.display = "none";
+  elInfoWarningEn.style.display = "none";
+  elInfoSuccessFi.style.display = "inline";
+  elInfoSuccessEn.style.display = "inline";
+};
+
+const gameOver = () => {
+  elInfoWarningFi.style.display = "none";
+  elInfoWarningEn.style.display = "none";
+  elInfoGameoverFi.style.display = "inline";
+  elInfoGameoverEn.style.display = "inline";
 };
