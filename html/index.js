@@ -55,36 +55,43 @@ socket.on("buttonA", (pressed, data) => {
     // elGameOn.style.display = "inline";
     // elSuccess.style.display = "none";
     // elGameOver.style.display = "none";
+    const endTime = new Date().getTime() + 1000 * 60 * 60.02;
+
+    const timer = () => {
+      let now = new Date().getTime();
+      t = endTime - now;
+
+      if (t >= 0) {
+        let hours = Math.floor(
+          (t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60.02)
+        );
+        let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        let secs = Math.floor((t % (1000 * 60)) / 1000);
+
+        document.getElementById("timer-hours").innerHTML = ("0" + hours).slice(
+          -2
+        );
+        document.getElementById("timer-mins").innerHTML = ("0" + mins).slice(
+          -2
+        );
+        document.getElementById("timer-secs").innerHTML = ("0" + secs).slice(
+          -2
+        );
+      } else {
+        // elGameOn.style.display = "none";
+        // elGameOver.style.display = "inline";
+        buttonBPressed = true; // so that you can't push solving button after time is up
+      }
+    };
+
+    theTimer = setInterval(timer, 1000);
   }
-  const endTime = new Date().getTime() + 1000 * 60 * 60.02;
-
-  const timer = () => {
-    let now = new Date().getTime();
-    t = endTime - now;
-
-    if (t >= 0) {
-      let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60.02));
-      let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-      let secs = Math.floor((t % (1000 * 60)) / 1000);
-
-      document.getElementById("timer-hours").innerHTML = ("0" + hours).slice(
-        -2
-      );
-      document.getElementById("timer-mins").innerHTML = ("0" + mins).slice(-2);
-      document.getElementById("timer-secs").innerHTML = ("0" + secs).slice(-2);
-    } else {
-      // elGameOn.style.display = "none";
-      // elGameOver.style.display = "inline";
-      buttonBPressed = true; // so that you can't push solving button after time is up
-    }
-  };
-
-  theTimer = setInterval(timer, 1000);
 });
 
 socket.on("buttonB", (pressed, data) => {
   if (buttonBPressed === false) {
     buttonBPressed = true;
+    gameStarted = false;
     gameSuccess();
     // elGameOn.style.display = "none";
     // elSuccess.style.display = "inline";
@@ -96,10 +103,11 @@ socket.on("buttonB", (pressed, data) => {
 
 socket.on("buttonC", (pressed, data) => {
   clearInterval(theTimer);
-  elBegin.style.display = "inline";
-  elGameOn.style.display = "none";
-  elSuccess.style.display = "none";
-  elGameOver.style.display = "none";
+  gameReset();
+  // elBegin.style.display = "inline";
+  // elGameOn.style.display = "none";
+  // elSuccess.style.display = "none";
+  // elGameOver.style.display = "none";
   buttonAPressed = false;
   buttonBPressed = true;
 });
@@ -135,4 +143,24 @@ const gameOver = () => {
   elInfoWarningEn.style.display = "none";
   elInfoGameoverFi.style.display = "inline";
   elInfoGameoverEn.style.display = "inline";
+};
+
+const gameReset = () => {
+  elInfoWarningFi.style.display = "none";
+  elInfoWarningEn.style.display = "none";
+  elInfoSuccessFi.style.display = "none";
+  elInfoSuccessEn.style.display = "none";
+  elInfoGameoverFi.style.display = "none";
+  elInfoGameoverEn.style.display = "none";
+
+  elTimerHours.style.display = "none";
+  elTimerMins.style.display = "none";
+  elTimerSecs.style.display = "none";
+
+  elInfoTextFi.style.display = "inline";
+  elInfoTextEn.style.display = "inline";
+
+  elEmptyHours.style.display = "inline";
+  elEmptyMins.style.display = "inline";
+  elEmptySecs.style.display = "inline";
 };
