@@ -83,9 +83,8 @@ socket.on("buttonA", (pressed, data) => {
         buttonBPressed = true; // so that you can't push solving button after time is up
       }
     };
-
-    theTimer = setInterval(timer, 1000);
   }
+  theTimer = setInterval(timer, 1000);
 });
 
 socket.on("buttonB", (pressed, data) => {
