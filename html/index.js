@@ -12,8 +12,8 @@ const elEmptyMins = document.getElementById("empty-mins");
 const elEmptySecs = document.getElementById("empty-secs");
 
 // text elements that change depending on the state of the game
-const elInfotextFi = document.getElementById("info-text-fi");
-const elInfotextEn = document.getElementById("info-text-en");
+const elInfoTextFi = document.getElementById("info-text-fi");
+const elInfoTextEn = document.getElementById("info-text-en");
 const elInfoWarningFi = document.getElementById("info-warning-fi");
 const elInfoWarningEn = document.getElementById("info-warning-en");
 const elInfoSuccessFi = document.getElementById("info-success-fi");
@@ -101,13 +101,14 @@ socket.on("buttonC", (pressed, data) => {
   // elGameOn.style.display = "none";
   // elSuccess.style.display = "none";
   // elGameOver.style.display = "none";
+  gameStarted = false;
   buttonAPressed = false;
   buttonBPressed = true;
 });
 
 const gameOn = () => {
-  elInfotextFi.style.display = "none";
-  elInfotextEn.style.display = "none";
+  elInfoTextFi.style.display = "none";
+  elInfoTextEn.style.display = "none";
   elInfoWarningFi.style.display = "inline";
   elInfoWarningEn.style.display = "inline";
   elEmptyHours.style.display = "none";
