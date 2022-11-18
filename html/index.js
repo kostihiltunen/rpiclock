@@ -64,6 +64,7 @@ socket.on("buttonA", (pressed, data) => {
     } else {
       gameOver();
       buttonBPressed = true;
+      gameStarted = false;
     }
   };
   theTimer = setInterval(timer, 1000);
