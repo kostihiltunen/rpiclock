@@ -91,8 +91,8 @@ socket.on("buttonC", (pressed, data) => {
 const gameOn = () => {
   elInfoTextFi.style.display = "none";
   elInfoTextEn.style.display = "none";
-  elSuccessFi.style.display = "none";
-  elSuccessEn.style.display = "none";
+  // elSuccessFi.style.display = "none";
+  // elSuccessEn.style.display = "none";
   elInfoWarningFi.style.display = "inline";
   elInfoWarningEn.style.display = "inline";
   elEmptyHours.style.display = "none";
