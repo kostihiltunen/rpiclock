@@ -93,6 +93,8 @@ const gameOn = () => {
   elInfoTextEn.style.display = "none";
   elInfoSuccessFi.style.display = "none";
   elInfoSuccessEn.style.display = "none";
+  elInfoGameoverFi.style.display = "none";
+  elInfoGameoverEn.style.display = "none";
   elInfoWarningFi.style.display = "inline";
   elInfoWarningEn.style.display = "inline";
   elEmptyHours.style.display = "none";
