@@ -75,6 +75,7 @@ socket.on("buttonA", (pressed, data) => {
     } else {
       // elGameOn.style.display = "none";
       // elGameOver.style.display = "inline";
+      gameOver();
       buttonBPressed = true; // so that you can't push solving button after time is up
     }
   };
