@@ -1,6 +1,3 @@
-// const elBegin = document.getElementById("beginning");
-// const elTimerbox = document.getElementById("info-timerbox");
-
 // number elements to be populated with timer information
 const elTimerHours = document.getElementById("timer-hours");
 const elTimerMins = document.getElementById("timer-mins");
@@ -32,14 +29,10 @@ elTimerHours.style.display = "none";
 elTimerMins.style.display = "none";
 elTimerSecs.style.display = "none";
 
-// const elGameOn = document.getElementById("gameon");
-// const elSuccess = document.getElementById("gamesuccess");
-// const elGameOver = document.getElementById("gameover");
-
 let t;
 let solveTime;
 let buttonAPressed = false;
-let buttonBPressed = true; // so that button B can only be pressed when button A is pressed first
+let buttonBPressed = true;
 let theTimer;
 let gameStarted = false;
 
@@ -51,10 +44,6 @@ socket.on("buttonA", (pressed, data) => {
   if (gameStarted === false) {
     gameStarted = true;
     gameOn();
-    // elBegin.style.display = "none";
-    // elGameOn.style.display = "inline";
-    // elSuccess.style.display = "none";
-    // elGameOver.style.display = "none";
   }
   const endTime = new Date().getTime() + 1000 * 60 * 60.02;
 
@@ -73,10 +62,8 @@ socket.on("buttonA", (pressed, data) => {
       document.getElementById("timer-mins").innerHTML = ("0" + mins).slice(-2);
       document.getElementById("timer-secs").innerHTML = ("0" + secs).slice(-2);
     } else {
-      // elGameOn.style.display = "none";
-      // elGameOver.style.display = "inline";
       gameOver();
-      buttonBPressed = true; // so that you can't push solving button after time is up
+      buttonBPressed = true;
     }
   };
   theTimer = setInterval(timer, 1000);
@@ -87,10 +74,8 @@ socket.on("buttonB", (pressed, data) => {
     buttonBPressed = true;
     gameStarted = false;
     gameSuccess();
-    // elGameOn.style.display = "none";
-    // elSuccess.style.display = "inline";
-    solveTime = t;
-    console.log(solveTime); //for testing purpose
+    solveTime = t; //for later use
+    // console.log(solveTime);
     clearInterval(theTimer);
   }
 });
@@ -98,10 +83,6 @@ socket.on("buttonB", (pressed, data) => {
 socket.on("buttonC", (pressed, data) => {
   clearInterval(theTimer);
   gameReset();
-  // elBegin.style.display = "inline";
-  // elGameOn.style.display = "none";
-  // elSuccess.style.display = "none";
-  // elGameOver.style.display = "none";
   gameStarted = false;
   buttonAPressed = false;
   buttonBPressed = true;
@@ -110,6 +91,8 @@ socket.on("buttonC", (pressed, data) => {
 const gameOn = () => {
   elInfoTextFi.style.display = "none";
   elInfoTextEn.style.display = "none";
+  elSuccessFi.style.display = "none";
+  elSuccessEn.style.display = "none";
   elInfoWarningFi.style.display = "inline";
   elInfoWarningEn.style.display = "inline";
   elEmptyHours.style.display = "none";
