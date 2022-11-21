@@ -39,8 +39,9 @@ let gameStarted = false;
 const socket = io();
 
 socket.on("buttonA", (pressed, data) => {
+  clearInterval(theTimer);
+
   if (gameStarted === false) {
-    clearInterval(theTimer);
     buttonBPressed = false; // game is solvable
     gameStarted = true;
     gameOn();
