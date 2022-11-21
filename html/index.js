@@ -3,12 +3,12 @@ const elTimerHours = document.getElementById("timer-hours");
 const elTimerMins = document.getElementById("timer-mins");
 const elTimerSecs = document.getElementById("timer-secs");
 
-// number elements that are showing in the beginning
+// number elements that are shown in the beginning
 const elEmptyHours = document.getElementById("empty-hours");
 const elEmptyMins = document.getElementById("empty-mins");
 const elEmptySecs = document.getElementById("empty-secs");
 
-// text elements that change depending on the state of the game
+// info text elements to be shown depending on the state of the game
 const elInfoTextFi = document.getElementById("info-text-fi");
 const elInfoTextEn = document.getElementById("info-text-en");
 const elInfoWarningFi = document.getElementById("info-warning-fi");
@@ -39,12 +39,13 @@ let gameStarted = false;
 const socket = io();
 
 socket.on("buttonA", (pressed, data) => {
-  buttonBPressed = false;
-  clearInterval(theTimer);
   if (gameStarted === false) {
+    clearInterval(theTimer);
+    buttonBPressed = false; // game is solvable
     gameStarted = true;
     gameOn();
   }
+
   const endTime = new Date().getTime() + 1000 * 60 * 60.02;
 
   const timer = () => {
@@ -64,7 +65,7 @@ socket.on("buttonA", (pressed, data) => {
     } else {
       gameOver();
       buttonBPressed = true;
-      gameStarted = false;
+      //gameStarted = false;
     }
   };
   theTimer = setInterval(timer, 1000);
