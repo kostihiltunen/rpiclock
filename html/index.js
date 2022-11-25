@@ -31,9 +31,10 @@ elTimerSecs.style.display = "none";
 
 let t;
 let solveTime;
+let theTimer;
+
 let buttonAPressed = false;
 let buttonBPressed = true;
-let theTimer;
 let gameStarted = false;
 
 const socket = io();
@@ -42,6 +43,7 @@ socket.on("buttonA", (pressed, data) => {
   clearInterval(theTimer);
 
   if (gameStarted === false) {
+    buttonAPressed = true;
     buttonBPressed = false; // game is solvable
     gameStarted = true;
     gameOn();
@@ -65,7 +67,7 @@ socket.on("buttonA", (pressed, data) => {
       document.getElementById("timer-secs").innerHTML = ("0" + secs).slice(-2);
     } else {
       gameOver();
-      buttonBPressed = true;
+      buttonBPressed = true; //so that the game cannot be solver after time is up
       //gameStarted = false;
     }
   };
