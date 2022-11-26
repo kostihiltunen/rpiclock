@@ -68,7 +68,7 @@ socket.on("buttonA", (pressed, data) => {
     } else {
       gameOver();
       buttonBPressed = true; //so that the game cannot be solver after time is up
-      //gameStarted = false;
+      gameStarted = false;
     }
   };
   theTimer = setInterval(timer, 1000);
