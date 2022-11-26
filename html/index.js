@@ -67,7 +67,8 @@ socket.on("buttonA", (pressed, data) => {
       document.getElementById("timer-secs").innerHTML = ("0" + secs).slice(-2);
     } else {
       gameOver();
-      buttonBPressed = true; //so that the game cannot be solver after time is up
+      buttonAPressed = false;
+      buttonBPressed = true; //so that the game cannot be solved after time is up
       gameStarted = false;
     }
   };
