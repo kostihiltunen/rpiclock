@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Gpio = require("onoff").Gpio;
-const buttonA = new Gpio(17, "in", "both");
+const buttonA = new Gpio(26, "in", "both");
 const buttonB = new Gpio(27, "in", "both");
 const buttonC = new Gpio(22, "in", "both");
 
