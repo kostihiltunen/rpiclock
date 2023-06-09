@@ -3,12 +3,12 @@ webbrowser countdown clock with hardware buttons to escape room game with Raspbe
 
 Environment
 
-    Raspberry Pi 3
-    three hardware buttons
-    microsd card
-    Raspberry Pi OS
-    Google Chrome
-    full hd tv screen
+    - Raspberry Pi 3
+    - three hardware buttons
+    - microsd card
+    - Raspberry Pi OS
+    - Google Chrome
+    - full hd tv screen
 
 Description
 
